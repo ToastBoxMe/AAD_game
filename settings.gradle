@@ -1,0 +1,2 @@
+rootProject.name='AAD_game'
+include ':app'
