@@ -46,19 +46,23 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/button00"
+            android:theme="@style/textSizeXO"
+            android:id="@+id/button_00"
+
             />
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/button01"
+            android:theme="@style/textSizeXO"
+            android:id="@+id/button_01"
             />
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/button02"
+            android:theme="@style/textSizeXO"
+            android:id="@+id/button_02"
             />
     </LinearLayout>
 
@@ -70,19 +74,22 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/button10"
+        android:theme="@style/textSizeXO"
+        android:id="@+id/button_10"
         />
     <Button
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/button11"
+        android:theme="@style/textSizeXO"
+        android:id="@+id/button_11"
         />
     <Button
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/button12"
+        android:theme="@style/textSizeXO"
+        android:id="@+id/button_12"
         />
     </LinearLayout>
 
@@ -94,19 +101,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/button20"
+            android:theme="@style/textSizeXO"
+            android:id="@+id/button_20"
             />
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/button21"
+            android:theme="@style/textSizeXO"
+            android:id="@+id/button_21"
             />
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/button22"
+            android:theme="@style/textSizeXO"
+            android:id="@+id/button_22"
             />
     </LinearLayout>
 

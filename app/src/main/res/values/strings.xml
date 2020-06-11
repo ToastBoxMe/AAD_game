@@ -3,4 +3,8 @@
     <string name="player_1_0">Player 1= 0</string>
     <string name="player_2_0">Player 2= 0</string>
     <string name="reset_button">Reset</string>
+    <string name="single_player_text">single-player</string>
+    <string name="multi_player_text">multi-player</string>
+    <string name="title_text">TIC TAC TOE</string>
+    <string name="play">play</string>
 </resources>
