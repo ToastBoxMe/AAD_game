@@ -4,25 +4,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <TextView
+        android:id="@+id/multiplayer_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_text"
-        android:textSize="60sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="27dp"
         android:layout_marginTop="120dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/game_title"
+        android:text="multiplayer"
+        android:textSize="55sp"
+        android:textAllCaps="true"
         />
-    <Button
+
+    <TextView
+        android:id="@+id/tic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/play"
+        android:layout_below="@+id/multiplayer_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="12dp"
+        android:text="tic"
+        android:textSize="55sp"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/tac_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/game_title"
-        android:layout_marginTop="240dp"
-        android:padding="8dp"
-        android:textSize="30sp"
+        android:layout_below="@+id/tic_title"
+        android:text="tac"
+        android:textSize="55sp"
+        android:textAllCaps="true"
+
+        />
+    <TextView
+
+        android:id="@+id/toe_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="60dp"
+        android:layout_below="@+id/tac_title"
+        android:text="toe"
+        android:textSize="55sp"
+        android:textAllCaps="true"
+        />
+
+    <Button
         android:id="@+id/start_play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toe_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="174dp"
+        android:padding="8dp"
+        android:text="@string/play"
+        android:textSize="30sp"
         />
 
 
