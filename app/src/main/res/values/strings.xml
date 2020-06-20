@@ -11,4 +11,8 @@
     <string name="toe">toe</string>
     <string name="play">play</string>
     <string name="multiplayer">multiplayer</string>
+    <string name="pvp">PvP</string>
+    <string name="tic">tic</string>
+    <string name="tac">tac</string>
+    <string name="toe">toe</string>
 </resources>

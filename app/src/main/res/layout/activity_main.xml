@@ -16,7 +16,7 @@
         android:layout_marginTop="140dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/code_pro_bold_lc"
-        android:text="PvP"
+        android:text="@string/pvp"
         android:textColor="@color/black"
         android:textSize="75sp" />
 
@@ -27,7 +27,7 @@
         android:layout_below="@+id/multiplayer_title"
         android:layout_centerHorizontal="true"
         android:layout_margin="8dp"
-        android:text="tic"
+        android:text="@string/tic"
         android:textSize="55sp"
         android:textAllCaps="true"
         android:fontFamily="@font/code_pro_bold_lc"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tic_title"
-        android:text="tac"
+        android:text="@string/tac"
         android:layout_margin="8dp"
         android:textSize="55sp"
         android:fontFamily="@font/code_pro_bold_lc"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tac_title"
-        android:text="toe"
+        android:text="@string/toe"
         android:textSize="55sp"
         android:fontFamily="@font/code_pro_bold_lc"
         android:textAllCaps="true"
@@ -85,6 +85,12 @@
         android:textOn=""
         android:backgroundTint="@color/black"
         android:id="@+id/mute_button"
+        android:layout_alignParentRight="true"
+        />
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/question_mark_black"
         />
 
 
