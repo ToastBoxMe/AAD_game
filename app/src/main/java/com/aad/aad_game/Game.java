@@ -13,6 +13,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,6 +33,10 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
 
+    private ImageView faceNormalP;
+    private ImageView faceXP;
+
+
 
 
 
@@ -41,6 +47,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         //assign ID
         textViewPlayer1 = findViewById(R.id.player1_score);
         textViewPlayer2 = findViewById(R.id.player2_score);
+        faceNormalP = findViewById(R.id.face_p1);
+        faceXP = findViewById(R.id.face_p2);
 
         //looping though all the array
         for (int i = 0; i < 3; i++) {
@@ -141,7 +149,9 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         //Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
         showToast("Player 1 WIN!!!");
         updatePoint();
-        new CountDownTimer(3000, 1000) {
+        animateEmojiP1();
+        animateScoreP1();
+        new CountDownTimer(2000, 1000) {
             public void onFinish() {
                 // When timer is finished
                 resetBoard();
@@ -159,7 +169,9 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         //Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
         showToast("Player 2 WIN!!!");
         updatePoint();
-        new CountDownTimer(3000, 1000) {
+        animateEmojiP2();
+        animateScoreP2();
+        new CountDownTimer(2000, 1000) {
             public void onFinish() {
                 // When timer is finished
                 resetBoard();
@@ -218,6 +230,22 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             //deprecated in API 26
             v.vibrate(50);
         }
+    }
+    public void animateEmojiP1() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_emoji);
+        faceNormalP.startAnimation(animation);
+    }
+    public void animateEmojiP2() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_emoji);
+        faceXP.startAnimation(animation);
+    }
+    public void animateScoreP1() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_score);
+        textViewPlayer1.startAnimation(animation);
+    }
+    public void animateScoreP2() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_score);
+        textViewPlayer2.startAnimation(animation);
     }
 
 }

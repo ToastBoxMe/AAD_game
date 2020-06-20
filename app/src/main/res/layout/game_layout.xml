@@ -8,8 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mute_board"
-        android:gravity="">
+        android:id="@+id/mute_board">
 
         <ToggleButton
             android:id="@+id/mute_button"
@@ -32,18 +31,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/mute_board">
-        <ImageSwitcher
+        <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@mipmap/face_normal"
+            android:background="@mipmap/face_normal_p"
             android:layout_toLeftOf="@+id/score_seperator"
             android:layout_marginRight="30dp"
             android:id="@+id/face_p1"
             />
-        <ImageSwitcher
+        <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@mipmap/face_x"
+            android:background="@mipmap/face_xp"
             android:layout_toRightOf="@id/score_seperator"
             android:layout_marginLeft="30dp"
             android:id="@+id/face_p2"
