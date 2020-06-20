@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/main_layout">
 
     <TextView
         android:id="@+id/multiplayer_title"
@@ -66,6 +67,15 @@
         android:text="@string/play"
         android:textSize="30sp"
         />
+
+    <ToggleButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_volume_button"
+        android:textOff=""
+        android:textOn=""
+        />
+
 
 
 </RelativeLayout>

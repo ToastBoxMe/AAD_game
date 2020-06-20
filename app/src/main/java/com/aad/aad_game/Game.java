@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.media.AudioAttributes;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -20,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
     //variables
@@ -67,19 +65,20 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View v) {
-
-        if (player1Turn) {
-            ((Button) v).setText("X");
-            vibration();
-        } else {
-            ((Button) v).setText("O");
-            vibration();
+        //if button is not empty
+        if (!((Button) v).getText().toString().equals("")) {
+            return;
         }
+            if (player1Turn) {
+                ((Button) v).setText("X");
+                vibration();
+            } else {
+                ((Button) v).setText("O");
+                vibration();
+            } roundCount++;
 
-        roundCount++;
 
         if (checkForWin()) {
             //after check method, if it is player 1, means player 1 win
@@ -115,9 +114,10 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     }
 
     //method on how points will be updated ===========================================================================
+    @SuppressLint("SetTextI18n")
     private void updatePointText() {
-        textViewPlayer1.setText("Player 1= " + player1Points);
-        textViewPlayer2.setText("Player 2= " + player2Points);
+        textViewPlayer1.setText(player1Points);
+        textViewPlayer2.setText(player2Points);
     }
 
     private void resetBoard() {
@@ -187,8 +187,9 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         //check cross value from bottom left to top right
         if (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !field[0][2].equals("")) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     //method to enable vibration=========================================================================
