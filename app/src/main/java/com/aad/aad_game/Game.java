@@ -1,5 +1,6 @@
 package com.aad.aad_game;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.PersistableBundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.Gravity;
@@ -22,31 +24,27 @@ import android.widget.Toast;
 
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
-    //variables
     private Button[][] mButton = new Button[3][3];
-    private boolean player1Turn = true; //as soon as the game start player 1 will have the turn
+    private boolean playerTurn = true; //as soon as the game start player 1 will have the turn
     private int roundCount;
 
-    private int player1Points;
-    private int player2Points;
+    private int p1PointCounter;
+    private int p2PointCounter;
 
-    private TextView textViewPlayer1;
-    private TextView textViewPlayer2;
+    private TextView scoreP1;
+    private TextView scoreP2;
 
     private ImageView faceNormalP;
     private ImageView faceXP;
-
-
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
-        //assign ID
-        textViewPlayer1 = findViewById(R.id.player1_score);
-        textViewPlayer2 = findViewById(R.id.player2_score);
+        //assign ID to variable
+        scoreP1 = findViewById(R.id.player1_score);
+        scoreP2 = findViewById(R.id.player2_score);
         faceNormalP = findViewById(R.id.face_p1);
         faceXP = findViewById(R.id.face_p2);
 
@@ -69,15 +67,14 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
         });
     }
-
-
+    //onClick
     @Override
     public void onClick(View v) {
         //if button is not empty
         if (!((Button) v).getText().toString().equals("")) {
             return;
         }
-            if (player1Turn) {
+            if (playerTurn) {
                 ((Button) v).setText("X");
                 vibration();
             } else {
@@ -88,7 +85,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
         if (checkForWin()) {
             //after check method, if it is player 1, means player 1 win
-            if (player1Turn) {
+            if (playerTurn) {
                 player1Wins();
                 //else player 2 win
             } else {
@@ -99,7 +96,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             draw();
             //change value of player 1 into false (changing turn)
         } else {
-            player1Turn = !player1Turn;
+            playerTurn = !playerTurn;
         }
 
     }
@@ -122,8 +119,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     //method on how points will be updated ===========================================================================
     @SuppressLint("SetTextI18n")
     private void updatePoint() {
-        textViewPlayer1.setText(""+player1Points);
-        textViewPlayer2.setText(""+player2Points);
+        scoreP1.setText(""+ p1PointCounter);
+        scoreP2.setText(""+ p2PointCounter);
     }
 
     private void resetBoard() {
@@ -133,25 +130,25 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             }
         }
         roundCount = 0;
-        player1Turn = true;
+        playerTurn = true;
     }
 
     private void resetGame() {
         vibration();
-        player1Points = 0;
-        player2Points = 0;
+        p1PointCounter = 0;
+        p2PointCounter = 0;
         updatePoint();
     }
 
     //method changes on winning or draw ==================================================================================
     private void player1Wins() {
-        player1Points = player1Points + 100;
+        p1PointCounter = p1PointCounter + 100;
         //Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
         showToast("Player 1 WIN!!!");
         updatePoint();
         animateEmojiP1();
         animateScoreP1();
-        new CountDownTimer(2000, 1000) {
+        new CountDownTimer(200, 1000) {
             public void onFinish() {
                 // When timer is finished
                 resetBoard();
@@ -165,13 +162,13 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void player2Wins() {
-        player2Points = player2Points + 100;
+        p2PointCounter = p2PointCounter + 100;
         //Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
         showToast("Player 2 WIN!!!");
         updatePoint();
         animateEmojiP2();
         animateScoreP2();
-        new CountDownTimer(2000, 1000) {
+        new CountDownTimer(200, 1000) {
             public void onFinish() {
                 // When timer is finished
                 resetBoard();
@@ -235,6 +232,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             v.vibrate(50);
         }
     }
+    //animation method
     public void animateEmojiP1() {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_emoji);
         faceNormalP.startAnimation(animation);
@@ -245,11 +243,33 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     }
     public void animateScoreP1() {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_score);
-        textViewPlayer1.startAnimation(animation);
+        scoreP1.startAnimation(animation);
     }
     public void animateScoreP2() {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_score);
-        textViewPlayer2.startAnimation(animation);
+        scoreP2.startAnimation(animation);
     }
 
+    //orientation method
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("roundCount", roundCount);
+        outState.putInt("p1PointCounter", p1PointCounter);
+        outState.putInt("p2PointCounter", p2PointCounter);
+        outState.putBoolean("playerTurn", playerTurn);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        roundCount = savedInstanceState.getInt("roundCount");
+        p1PointCounter = savedInstanceState.getInt("p1PointCounter");
+        p2PointCounter = savedInstanceState.getInt("p2PointCounter");
+        playerTurn = savedInstanceState.getBoolean("playerTurn");
+    }
 }
+
+
+
+

@@ -14,28 +14,27 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/question_mark"
+            android:layout_alignParentBottom="true"
             />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/score_board"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mute_board">
+        android:layout_height="wrap_content">
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@mipmap/face_normal_p"
-            android:layout_toLeftOf="@+id/score_seperator"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="60sp"
             android:id="@+id/face_p1"
             />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@mipmap/face_xp"
-            android:layout_toRightOf="@id/score_seperator"
-            android:layout_marginLeft="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
             android:id="@+id/face_p2"
             />
         <TextView
@@ -45,9 +44,8 @@
             android:textSize="40sp"
             android:textColor="@color/white"
             android:layout_below="@+id/face_p1"
-            android:layout_toLeftOf="@id/score_seperator"
-            android:layout_marginRight="44dp"
             android:layout_marginTop="12dp"
+            android:layout_marginLeft="74dp"
             android:freezesText="true"
             android:id="@+id/player1_score"
             />
@@ -58,8 +56,8 @@
             android:textSize="40sp"
             android:textColor="@color/white"
             android:layout_below="@+id/face_p1"
-            android:layout_toRightOf="@id/score_seperator"
-            android:layout_marginLeft="44dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="77dp"
             android:layout_marginTop="12dp"
             android:freezesText="true"
             android:id="@+id/player2_score"
@@ -74,8 +72,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/score_board"
-        android:layout_above="@+id/reset_board"
         android:id="@+id/game_board">
         <Button
             android:id="@+id/b_00"
@@ -182,12 +178,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/reset_board"
-        android:gravity="center">
+        android:id="@+id/reset_board">
         <Button
-            android:layout_width="150dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
             android:id="@+id/resetButton"
             android:text="@string/restart"
             android:textSize="24sp"

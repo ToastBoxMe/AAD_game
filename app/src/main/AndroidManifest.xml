@@ -20,11 +20,11 @@
         </activity>
 
         <activity
-            android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
-        <activity android:name=".Game"
-            android:configChanges="screenLayout|orientation|screenSize">
+        <activity android:name=".Game">
         </activity>
 
         <meta-data

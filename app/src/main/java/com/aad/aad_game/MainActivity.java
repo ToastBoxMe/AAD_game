@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
     //define variable media
@@ -43,13 +42,25 @@ public class MainActivity extends AppCompatActivity {
         tacTextView = findViewById(R.id.tac_title);
         toeTextView = findViewById(R.id.toe_title);
         multiplayerTextView = findViewById(R.id.multiplayer_title);
-      //  toggleButton = findViewById(R.id.mute_button);
 
+        play();
         animateBackground();
         animateTitle();
 
         //assign ID to button
         playButton = findViewById(R.id.start_play_button);
+
+        android.widget.ToggleButton toggle = (android.widget.ToggleButton) findViewById(R.id.mute_button);
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    play();
+                } else {
+                    pause();
+                }
+            }
+        });
+
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,5 +93,19 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.start();
     }
 
+    public void play() {
+        if(mMediaPlayer == null){
+            mMediaPlayer = MediaPlayer.create(this, R.raw.sneaky_snitch);
+        }
+        mMediaPlayer.start();
+        mMediaPlayer.setLooping(true);
+    }
+    public void pause(){
+        if(mMediaPlayer != null){
+            mMediaPlayer.pause();
+        }
+    }
+
 }
+
 

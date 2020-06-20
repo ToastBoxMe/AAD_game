@@ -12,4 +12,7 @@
     <string name="tic">tic</string>
     <string name="tac">tac</string>
     <string name="toe">toe</string>
+    <string name="restart">RESTART</string>
+    <string name="p_s_1">0</string>
+    <string name="p_s_2">0</string>
 </resources>
