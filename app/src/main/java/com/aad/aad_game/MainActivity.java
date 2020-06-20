@@ -4,15 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
+    //define variable media
+    MediaPlayer mMediaPlayer;
+   // ToggleButton toggleButton = new ToggleButton(this);
 
     //define Button variable
     private Button playButton;
@@ -22,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView tacTextView;
     private TextView toeTextView;
     private TextView multiplayerTextView;
-
-    //define variable
-    boolean pressed;
 
     //define variable for layout
     RelativeLayout mainLayout;
@@ -40,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
         tacTextView = findViewById(R.id.tac_title);
         toeTextView = findViewById(R.id.toe_title);
         multiplayerTextView = findViewById(R.id.multiplayer_title);
-
-        pressed = true;
+      //  toggleButton = findViewById(R.id.mute_button);
 
         animateBackground();
         animateTitle();
@@ -79,5 +81,6 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.setExitFadeDuration(4500);
         animationDrawable.start();
     }
+
 }
 

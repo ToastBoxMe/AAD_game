@@ -186,6 +186,10 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
     private void draw() {
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
+        animateEmojiP2();
+        animateScoreP2();
+        animateEmojiP1();
+        animateScoreP1();
         resetBoard();
     }
 

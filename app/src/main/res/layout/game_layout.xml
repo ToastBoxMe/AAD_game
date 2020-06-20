@@ -18,7 +18,8 @@
             android:backgroundTint="@color/white"
             android:textOff=""
             android:textOn=""
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:checked="true"/>
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
