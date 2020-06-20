@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void animateTitle() {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_title);
-        Animation animationMultipalyer = AnimationUtils.loadAnimation(this, R.anim.anim_title_multiplayer);
+        Animation animationMultipalyer = AnimationUtils.loadAnimation(this, R.anim.anim_title_pvp);
         multiplayerTextView.startAnimation(animationMultipalyer);
         ticTextView.startAnimation(animation);
         tacTextView.startAnimation(animation);

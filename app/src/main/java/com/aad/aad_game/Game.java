@@ -1,13 +1,12 @@
 package com.aad.aad_game;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.Gravity;
@@ -22,7 +21,7 @@ import android.widget.Toast;
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
     //variables
-    private Button[][] buttons = new Button[3][3];
+    private Button[][] mButton = new Button[3][3];
     private boolean player1Turn = true; //as soon as the game start player 1 will have the turn
     private int roundCount;
 
@@ -32,25 +31,24 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
 
-    //make vibrator variable
-    Vibrator vibrator;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
-        //create method
-        textViewPlayer1 = findViewById(R.id.player1);
-        textViewPlayer2 = findViewById(R.id.player2);
+        setContentView(R.layout.game_layout);
+        //assign ID
+        textViewPlayer1 = findViewById(R.id.player1_score);
+        textViewPlayer2 = findViewById(R.id.player2_score);
 
         //looping though all the array
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                String buttonID = "button_" + i + j;
+                String buttonID = "b_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-                buttons[i][j] = findViewById(resID);
-                buttons[i][j].setOnClickListener(this);
+                mButton[i][j] = findViewById(resID);
+                mButton[i][j].setOnClickListener(this);
             }
         }
         Button resetButton = findViewById(R.id.resetButton);
@@ -115,15 +113,15 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
     //method on how points will be updated ===========================================================================
     @SuppressLint("SetTextI18n")
-    private void updatePointText() {
-        textViewPlayer1.setText(player1Points);
-        textViewPlayer2.setText(player2Points);
+    private void updatePoint() {
+        textViewPlayer1.setText(""+player1Points);
+        textViewPlayer2.setText(""+player2Points);
     }
 
     private void resetBoard() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                buttons[i][j].setText("");
+                mButton[i][j].setText("");
             }
         }
         roundCount = 0;
@@ -134,24 +132,44 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         vibration();
         player1Points = 0;
         player2Points = 0;
-        updatePointText();
+        updatePoint();
     }
 
     //method changes on winning or draw ==================================================================================
     private void player1Wins() {
-        player1Points++;
+        player1Points = player1Points + 100;
         //Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
         showToast("Player 1 WIN!!!");
-        updatePointText();
-        resetBoard();
+        updatePoint();
+        new CountDownTimer(3000, 1000) {
+            public void onFinish() {
+                // When timer is finished
+                resetBoard();
+            }
+
+            public void onTick(long millisUntilFinished) {
+                // millisUntilFinished    The amount of time until finished.
+            }
+        }.start();
+
     }
 
     private void player2Wins() {
-        player2Points++;
+        player2Points = player2Points + 100;
         //Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
         showToast("Player 2 WIN!!!");
-        updatePointText();
-        resetBoard();
+        updatePoint();
+        new CountDownTimer(3000, 1000) {
+            public void onFinish() {
+                // When timer is finished
+                resetBoard();
+            }
+
+            public void onTick(long millisUntilFinished) {
+                // millisUntilFinished    The amount of time until finished.
+            }
+        }.start();
+
     }
 
     private void draw() {
@@ -165,7 +183,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         //check all button
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                field[i][j] = buttons[i][j].getText().toString();
+                field[i][j] = mButton[i][j].getText().toString();
             }
         }
         //check all horizontal button, if match return true player 1 win
@@ -187,9 +205,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         //check cross value from bottom left to top right
         if (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !field[0][2].equals("")) {
             return true;
-        } else {
-            return false;
         }
+            return false;
     }
 
     //method to enable vibration=========================================================================
@@ -202,4 +219,5 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             v.vibrate(50);
         }
     }
+
 }

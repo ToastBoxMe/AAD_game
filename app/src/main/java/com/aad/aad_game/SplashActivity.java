@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_splash);
 
         mRunnable = new Runnable() {
             @Override
@@ -24,13 +24,13 @@ public class SplashActivity extends AppCompatActivity {
             }
         };
         mHandler = new Handler();
-        mHandler.postDelayed(mRunnable, 1500);
-    }
+        mHandler.postDelayed(mRunnable, 800);
 
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
         if(mHandler != null && mRunnable != null)
-        mHandler.removeCallbacks(mRunnable);
+            mHandler.removeCallbacks(mRunnable);
     }
 }
