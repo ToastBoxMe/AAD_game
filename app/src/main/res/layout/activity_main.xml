@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/toe_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
         android:padding="8dp"
         android:text="@string/play"
         android:textSize="30sp"
@@ -97,12 +97,12 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/start_play_button"
-        android:layout_marginTop="20dp"
         android:text="login"
+        android:layout_below="@+id/start_play_button"
+        android:layout_marginTop="20dp"
         android:background="@drawable/custom_play_button"
-        android:textColor="@color/black"
         android:fontFamily="@font/alfa_slab_one"
+        android:textColor="@color/black"
         />
 
 
