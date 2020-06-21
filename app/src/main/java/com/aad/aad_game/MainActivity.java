@@ -93,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
     //method
     public void openHowTo(){
-        HowToDialog howToDialog = new HowToDialog();
-        howToDialog.show(getSupportFragmentManager(),"example dialog");
+        Intent intent = new Intent(this, HowToDialog.class);
+        startActivity(intent);
     }
     public void openGame() {
         Intent intent = new Intent(this, Game.class);
@@ -130,8 +130,6 @@ public class MainActivity extends AppCompatActivity {
             mMediaPlayer.pause();
         }
     }
-
-
 }
 
 

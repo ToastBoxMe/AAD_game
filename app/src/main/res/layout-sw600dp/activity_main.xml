@@ -90,23 +90,19 @@
         android:checked="true"
         />
 
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/question_mark_black"
-        android:id="@+id/how_to"/>
 
     <Button
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-        android:text="login"
+        android:text="@string/help"
         android:layout_below="@+id/start_play_button"
         android:layout_marginTop="30dp"
         android:textSize="30sp"
         android:background="@drawable/custom_play_button"
         android:fontFamily="@font/alfa_slab_one"
         android:textColor="@color/black"
+        android:id="@+id/how_to"
         />
 
 

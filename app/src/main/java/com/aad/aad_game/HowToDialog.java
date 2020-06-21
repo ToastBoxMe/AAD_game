@@ -2,22 +2,53 @@ package com.aad.aad_game;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class HowToDialog extends AppCompatDialogFragment {
-    @NonNull
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
+
+public class HowToDialog extends AppCompatActivity {
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference reference;
+
+    TextView textView;
+
+
+
+
     @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
-        //add pop up dialod that show the rule of the game
-        dialog.setTitle("Rules")
-                .setMessage("The object of Tic Tac Toe is to get three in a row."+"\n\n"+"You play on a three by three game board."
-                        +"\n\n"+"The first player is known as X and the second is O."+"\n\n"+
-                        "Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled."
-                +"\n\n"+"X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game.");
-        return dialog.create();
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.how_to_layout);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        reference = firebaseDatabase.getReference("Dialog data");
+
+        textView=(TextView) findViewById(R.id.sentence_1);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String childValue = String.valueOf(snapshot.getValue());
+                textView.setText(childValue);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
