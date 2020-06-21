@@ -2,4 +2,5 @@
 <resources>
     <dimen name="game_board">8dp</dimen>
     <dimen name="game_button">110dp</dimen>
+    <dimen name="game_button_tablet">150dp</dimen>
 </resources>

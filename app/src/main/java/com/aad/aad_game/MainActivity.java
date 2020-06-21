@@ -1,8 +1,11 @@
 package com.aad.aad_game;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     //define Button variable
     private Button playButton;
+    private Button howToButton;
 
     //define TextView variable
     private TextView ticTextView;
@@ -33,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
     AnimationDrawable animationDrawable;
 
     @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -42,14 +52,12 @@ public class MainActivity extends AppCompatActivity {
         tacTextView = findViewById(R.id.tac_title);
         toeTextView = findViewById(R.id.toe_title);
         multiplayerTextView = findViewById(R.id.multiplayer_title);
-
+        playButton = findViewById(R.id.start_play_button);
+        howToButton = findViewById(R.id.how_to);
 
         play();
         animateBackground();
         animateTitle();
-
-        //assign ID to button
-        playButton = findViewById(R.id.start_play_button);
 
         android.widget.ToggleButton toggle = (android.widget.ToggleButton) findViewById(R.id.mute_button);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -61,17 +69,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGame();
             }
         });
+        howToButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openHowTo();
+            }
+        });
+
     }
 
     //method
+    public void openHowTo(){
+        HowToDialog howToDialog = new HowToDialog();
+        howToDialog.show(getSupportFragmentManager(),"example dialog");
+    }
     public void openGame() {
         Intent intent = new Intent(this, Game.class);
         startActivity(intent);
@@ -106,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
             mMediaPlayer.pause();
         }
     }
+
 
 }
 

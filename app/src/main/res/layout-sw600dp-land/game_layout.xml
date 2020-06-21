@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -13,15 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@mipmap/face_normal_p"
             android:layout_marginLeft="60sp"
             android:id="@+id/face_p1"
             />
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@mipmap/face_xp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="60dp"
@@ -31,11 +30,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/p_s_1"
-            android:textSize="40sp"
+            android:textSize="60sp"
             android:textColor="@color/white"
             android:layout_below="@+id/face_p1"
             android:layout_marginTop="12dp"
-            android:layout_marginLeft="74dp"
+            android:layout_marginLeft="77dp"
             android:freezesText="true"
             android:id="@+id/player1_score"
             />
@@ -43,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/p_s_2"
-            android:textSize="40sp"
+            android:textSize="60sp"
             android:textColor="@color/white"
             android:layout_below="@+id/face_p1"
             android:layout_alignParentRight="true"
@@ -65,8 +64,8 @@
         android:id="@+id/game_board">
         <Button
             android:id="@+id/b_00"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_above="@id/b_11"
             android:layout_toLeftOf="@+id/b_01"
             android:layout_margin="@dimen/game_board"
@@ -76,8 +75,8 @@
             />
         <Button
             android:id="@+id/b_01"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_above="@+id/b_11"
             android:layout_centerHorizontal="true"
             android:layout_margin="@dimen/game_board"
@@ -87,8 +86,8 @@
             />
         <Button
             android:id="@+id/b_02"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_above="@id/b_11"
             android:layout_toRightOf="@id/b_01"
             android:layout_margin="@dimen/game_board"
@@ -98,8 +97,8 @@
             />
         <Button
             android:id="@+id/b_10"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_margin="@dimen/game_board"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/b_11"
@@ -109,8 +108,8 @@
             />
         <Button
             android:id="@+id/b_11"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_centerInParent="true"
             android:layout_margin="@dimen/game_board"
             android:background="@drawable/custom_game_button"
@@ -119,8 +118,8 @@
             />
         <Button
             android:id="@+id/b_12"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_margin="@dimen/game_board"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/b_11"
@@ -130,8 +129,8 @@
             />
         <Button
             android:id="@+id/b_20"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_margin="@dimen/game_board"
             android:layout_below="@+id/b_11"
             android:layout_toLeftOf="@id/b_21"
@@ -141,8 +140,8 @@
             />
         <Button
             android:id="@+id/b_21"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_margin="@dimen/game_board"
             android:layout_below="@+id/b_11"
             android:layout_centerHorizontal="true"
@@ -152,8 +151,8 @@
             />
         <Button
             android:id="@+id/b_22"
-            android:layout_width="@dimen/game_button"
-            android:layout_height="@dimen/game_button"
+            android:layout_width="@dimen/game_button_tablet"
+            android:layout_height="@dimen/game_button_tablet"
             android:layout_margin="@dimen/game_board"
             android:layout_below="@+id/b_11"
             android:layout_toRightOf="@id/b_21"
@@ -173,8 +172,8 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
             android:id="@+id/resetButton"
             android:text="@string/restart"
             android:textSize="24sp"

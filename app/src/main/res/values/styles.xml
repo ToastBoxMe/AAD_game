@@ -13,5 +13,9 @@
         <item name="android:windowBackground">@drawable/spash</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="AppTheme.HowToTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
 
 </resources>
