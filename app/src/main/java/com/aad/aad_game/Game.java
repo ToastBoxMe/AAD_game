@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -36,6 +41,10 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     private ImageView faceNormalP;
     private ImageView faceXP;
 
+    private Sensor proximitySensor;
+    private SensorManager sensorManager;
+    private SensorEventListener proximitySensorEventListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +55,23 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         scoreP2 = findViewById(R.id.player2_score);
         faceNormalP = findViewById(R.id.face_p1);
         faceXP = findViewById(R.id.face_p2);
+        //defining sensor
+        SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        final Sensor proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        SensorEventListener sensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                if(event.values[0] > 1) {
+                    resetBoard();
+                }
+            }
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            }
+        };
+        sensorManager.registerListener(sensorEventListener,proximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
+
+
 
         //looping though all the array
         for (int i = 0; i < 3; i++) {
@@ -65,6 +91,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             }
 
         });
+
+
     }
     //onClick
     @Override

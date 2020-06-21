@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         toeTextView = findViewById(R.id.toe_title);
         multiplayerTextView = findViewById(R.id.multiplayer_title);
 
+
         play();
         animateBackground();
         animateTitle();

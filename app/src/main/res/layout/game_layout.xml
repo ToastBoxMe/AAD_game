@@ -110,17 +110,18 @@
             android:theme="@style/textSizeXO"
             android:freezesText="true"
             />
+
         <Button
             android:id="@+id/b_10"
             android:layout_width="@dimen/game_button"
             android:layout_height="@dimen/game_button"
-            android:layout_margin="@dimen/game_board"
+            android:layout_margin="8dp"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/b_11"
             android:background="@drawable/custom_game_button"
-            android:theme="@style/textSizeXO"
             android:freezesText="true"
-            />
+            android:theme="@style/textSizeXO" />
+
         <Button
             android:id="@+id/b_11"
             android:layout_width="@dimen/game_button"
