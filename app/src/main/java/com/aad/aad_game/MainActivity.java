@@ -14,8 +14,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     //define variable media
@@ -25,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     //define Button variable
     private Button playButton;
     private Button howToButton;
+
 
     //define TextView variable
     private TextView ticTextView;
@@ -81,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 openHowTo();
             }
         });
-
     }
 
     //method

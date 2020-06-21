@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "893688705400",
+    "firebase_url": "https://aad-game-database.firebaseio.com",
+    "project_id": "aad-game-database",
+    "storage_bucket": "aad-game-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893688705400:android:84d589b9f37f37c339988d",
+        "android_client_info": {
+          "package_name": "com.aad.aad_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893688705400-27odluj2ci8nht8b00a7e4gro9tpthtm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvEXIg5Vn2dDRKiUzT1wq-6yeCi1vFfOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893688705400-27odluj2ci8nht8b00a7e4gro9tpthtm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

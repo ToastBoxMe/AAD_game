@@ -15,4 +15,6 @@
     <string name="restart">RESTART</string>
     <string name="p_s_1">0</string>
     <string name="p_s_2">0</string>
+    <string name="user_password">PASSWORD</string>
+    <string name="user_username">USERNAME</string>
 </resources>
