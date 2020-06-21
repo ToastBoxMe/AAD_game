@@ -4,30 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1A1A1A">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mute_board">
-
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/question_mark"
-            />
-    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/score_board"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mute_board">
+        android:layout_height="wrap_content">
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@mipmap/face_normal_p"
             android:layout_toLeftOf="@+id/score_seperator"
             android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/face_p1"
             />
         <ImageView
@@ -36,6 +24,7 @@
             android:background="@mipmap/face_xp"
             android:layout_toRightOf="@id/score_seperator"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/face_p2"
             />
         <TextView

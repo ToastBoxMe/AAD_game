@@ -17,4 +17,5 @@
     <string name="p_s_2">0</string>
     <string name="user_password">PASSWORD</string>
     <string name="user_username">USERNAME</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
 </resources>
