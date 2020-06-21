@@ -105,7 +105,7 @@
         android:background="@drawable/custom_play_button"
         android:fontFamily="@font/alfa_slab_one"
         android:textColor="@color/black"
-        android:id="@+id/login_main_button"
+        android:id="@+id/login_home_button"
         />
 
 

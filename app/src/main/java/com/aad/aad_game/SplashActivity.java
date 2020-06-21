@@ -13,10 +13,11 @@ public class SplashActivity extends AppCompatActivity {
     private Runnable mRunnable;
 
     @Override
+    //making splash screen
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
+        //if runnable delay
         mRunnable = new Runnable() {
             @Override
             public void run() {

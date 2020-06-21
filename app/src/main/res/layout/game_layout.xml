@@ -3,14 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#1A1A1A">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mute_board">
+
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/question_mark"
+            />
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/score_board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
+        android:layout_below="@id/mute_board">
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
