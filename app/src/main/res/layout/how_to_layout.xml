@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/how_to_background"
+    android:padding="20dp"
+    android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sentence_1"
+        android:textColor="@color/black"
+        android:fontFamily="@font/aldrich"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textFontWeight="900"
+        />
+
+</LinearLayout>

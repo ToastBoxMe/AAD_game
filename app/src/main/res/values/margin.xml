@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="game_board">8dp</dimen>
+    <dimen name="game_button">110dp</dimen>
+    <dimen name="game_button_tablet">150dp</dimen>
+    <dimen name="edit_text_login">300dp</dimen>
+</resources>

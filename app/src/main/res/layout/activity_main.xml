@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background_anim"
+    android:id="@+id/main_layout">
 
     <TextView
         android:id="@+id/multiplayer_title"
@@ -11,24 +13,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginTop="120dp"
-        android:text="multiplayer"
-        android:textSize="55sp"
-        android:textAllCaps="true"
-        />
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/code_pro_bold_lc"
+        android:text="@string/pvp"
+        android:textColor="@color/black"
+        android:textSize="75sp" />
 
     <TextView
         android:id="@+id/tic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/multiplayer_title"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="12dp"
-        android:text="tic"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:text="@string/tic"
         android:textSize="55sp"
-        android:textAllCaps="true"/>
+        android:textAllCaps="true"
+        android:fontFamily="@font/code_pro_bold_lc"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/tac_title"
@@ -36,9 +39,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tic_title"
-        android:text="tac"
+        android:text="@string/tac"
+        android:layout_margin="8dp"
         android:textSize="55sp"
+        android:fontFamily="@font/code_pro_bold_lc"
         android:textAllCaps="true"
+        android:textColor="@color/black"
 
         />
     <TextView
@@ -46,26 +52,58 @@
         android:id="@+id/toe_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="60dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/tac_title"
-        android:text="toe"
+        android:text="@string/toe"
         android:textSize="55sp"
+        android:fontFamily="@font/code_pro_bold_lc"
         android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:layout_margin="8dp"
         />
 
     <Button
         android:id="@+id/start_play_button"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toe_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="174dp"
+        android:layout_marginTop="30dp"
         android:padding="8dp"
         android:text="@string/play"
         android:textSize="30sp"
+        android:background="@drawable/custom_play_button"
+        android:textColor="@color/black"
+        android:fontFamily="@font/alfa_slab_one"
         />
+
+    <ToggleButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_volume_button"
+        android:textOff=""
+        android:textOn=""
+        android:backgroundTint="@color/black"
+        android:id="@+id/mute_button"
+        android:layout_alignParentRight="true"
+        android:checked="true"
+        />
+
+
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/help"
+        android:layout_below="@+id/start_play_button"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_play_button"
+        android:fontFamily="@font/alfa_slab_one"
+        android:textColor="@color/black"
+        android:id="@+id/how_to"
+        />
+
 
 
 </RelativeLayout>
